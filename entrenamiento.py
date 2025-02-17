@@ -76,10 +76,10 @@ if menu == "Visualización":
         st.subheader("Visualización de Datos")
         fig_plotly = px.scatter(
             filtered_data,
-            x="Ventas",
-            y="Descuento",
-            color="Región",
-            title="Relación entre Ventas y Descuento por Región",
+            x="Departamento",
+            y="Ventas",
+            color="Tipo_produccion",
+            title="Relación entre Ventas y Descuento por Departamento",
         )
         st.plotly_chart(fig_plotly)
     with tab2:
