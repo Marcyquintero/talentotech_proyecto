@@ -90,7 +90,7 @@ if menu == "Visualización":
             color="Tipo_produccion",
             title="Relación entre Ventas y Tipo de Producción por Departamento",
         )
-        st.plotly_chart(fig_plotly)
+        st.bar_chart(fig_plotly)
 
     with tab2:
         st.subheader("Datos Crudos")
