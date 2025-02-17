@@ -7,6 +7,8 @@ import seaborn as sns
 import plotly.express as px
 from datetime import datetime
 from vega_datasets import data
+source = data.barley()
+
 
 #1.
 st.set_page_config(
