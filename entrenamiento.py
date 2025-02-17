@@ -75,9 +75,8 @@ if menu == "Visualización":
     st.subheader("📌 Navegación entre Pestañas")
     tab1, tab2 = st.tabs(["📊 Gráficos", "📂 Datos"])
   
-  source = data.barley()
-
-st.bar_chart(source, x="Departamentor", y="Ventas", color="Tipo_produccion", stack=False)
+    source = data.barley()
+    st.bar_chart(source, x="Departamentor", y="Ventas", color="Tipo_produccion", stack=False)
 
 # 10. Mensaje de Confirmación
 st.sidebar.success("🎉 Configuración completa")
