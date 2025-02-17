@@ -62,4 +62,34 @@ if menu == "Visualización":
         max_value=data["Fecha"].max()
     )
     filtered_data = filtered_data[(filtered_data["Fecha"] >= pd.to_datetime(fecha_inicio)) & (filtered_data["Fecha"] <= pd.to_datetime(fecha_fin))]
+   # 8. Botón para Reiniciar Filtros
+    if st.sidebar.button("Reiniciar Filtros"):
+        filtered_data = data
+        st.experimental_rerun()
+
+    # 9. Implementar Pestañas
+    st.subheader("📌 Navegación entre Pestañas")
+    tab1, tab2 = st.tabs(["📊 Gráficos", "📂 Datos"])
+    with tab1:
+        st.subheader("Visualización de Datos")
+        fig_plotly = px.scatter(
+            filtered_data,
+            x="Ventas",
+            y="Descuento",
+            color="Región",
+            title="Relación entre Ventas y Descuento por Región",
+        )
+        st.plotly_chart(fig_plotly)
+    with tab2:
+        st.subheader("Datos Crudos")
+        st.dataframe(filtered_data)
+
+# 10. Mensaje de Confirmación
+st.sidebar.success("🎉 Configuración completa")
+
+# 11. Ejecución del Script
+if __name__ == "__main__":
+    st.sidebar.info("Ejecuta este script con: streamlit run talento-roadmap-app.py")
+
+  
   
