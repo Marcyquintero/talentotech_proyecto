@@ -21,7 +21,7 @@ data = pd.DataFrame({
     "Fecha": pd.date_range(start="2024-01-01", periods=100, freq="D"),
     "Ventas": np.random.randint(100, 500, size=100),
     "Produccion_toneladas": np.random.randint(0,5000, size=100),
-    "Tipo_produccion": np.random.uniform.choice(["Maiz", "Frijol", "Ahuyama", "Apio"], size=100),
+    "Tipo_produccion": np.random.choice(["Maiz", "Frijol", "Ahuyama", "Apio"], size=100),
     "Departamento": np.random.choice(["Antioquia", "Huila", "Cundinamarca", "Boyaca"], size=100),
     "Hectareas_sembradas": np.random.randint(0,5000, size=100),
     "Plagas_reportadas": np.random.randint(0,200, size=100),
