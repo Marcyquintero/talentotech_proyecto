@@ -85,8 +85,8 @@ if menu == "Visualización":
         # Usando plotly para una mejor visualización
         fig_bar = px.bar(
             filtered_data,
-            x="Ventas",
-            y="Departamento",
+            x="Departamento",
+            y="Ventas",
             color="Tipo_produccion",
             title="Relación entre Ventas y Tipo de Producción por Departamento",
             labels={"Departamento": "Departamento", "Ventas": "Ventas"},  # Etiquetas personalizadas
