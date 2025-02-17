@@ -92,7 +92,7 @@ if menu == "Visualización":
             labels={"Departamento": "Departamento", "Ventas": "Ventas"},  # Etiquetas personalizadas
             barmode="stack"  # Apilado de barras
         )
-         st.plotly_chart(fig_bar)
+        st.plotly_chart(fig_bar)
 
     with tab2:
         st.subheader("Datos Crudos")
