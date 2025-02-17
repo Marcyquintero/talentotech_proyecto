@@ -6,4 +6,4 @@ scipy
 seaborn
 plotly
 datetime
-data
+vega_datasets
