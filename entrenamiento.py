@@ -83,14 +83,16 @@ if menu == "Visualización":
         st.subheader("Visualización de Datos")
         
         # Usando plotly para una mejor visualización
-        fig_plotly = px.scatter(
+        fig_bar = px.bar(
             filtered_data,
             x="Ventas",
             y="Departamento",
             color="Tipo_produccion",
             title="Relación entre Ventas y Tipo de Producción por Departamento",
+            labels={"Departamento": "Departamento", "Ventas": "Ventas"},  # Etiquetas personalizadas
+            barmode="stack"  # Apilado de barras
         )
-        st.bar_chart(fig_plotly)
+         st.plotly_chart(fig_bar)
 
     with tab2:
         st.subheader("Datos Crudos")
