@@ -43,8 +43,8 @@ filtered_data = data  # Asegurar que filtered_data esté definido en todo el scr
 if menu == "Visualización":
     st.subheader("📊 Visualización de Datos")
     categoria = st.sidebar.selectbox("Selecciona un departamento", data["Departamento"].unique())
-    filtered_data = data[data["Departamento"] == departamento]
-    st.write(f"Mostrando datos para Departamentos {departamento}")
+    filtered_data = data[data["Departamento"] == Departamento]
+    st.write(f"Mostrando datos para Departamentos {Departamento}")
     st.dataframe(filtered_data)
 
   # 6. Filtrar por Ventas
