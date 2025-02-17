@@ -47,8 +47,8 @@ if menu == "Datos":
 filtered_data = random_data  # Asegurar que filtered_data esté definido en todo el script
 if menu == "Visualización":
     st.subheader("📊 Visualización de Datos")
-    categoria = st.sidebar.selectbox("Selecciona un departamento", random_data["Departamento"].unique())
-    filtered_data = random_data[random_data["Departamento"] == categoria]
+    categoria = st.sidebar.selectbox("Selecciona un tipo de produccion", random_data["Tipo_produccion"].unique())
+    filtered_data = random_data[random_data["Tipo_produccion"] == categoria]
     st.write(f"Mostrando datos para Departamentos {categoria}")
     st.dataframe(filtered_data)
 
