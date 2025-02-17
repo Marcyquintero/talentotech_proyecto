@@ -42,9 +42,9 @@ if menu == "Datos":
 filtered_data = data  # Asegurar que filtered_data esté definido en todo el script
 if menu == "Visualización":
     st.subheader("📊 Visualización de Datos")
-    categoria = st.sidebar.selectbox("Selecciona una categoría", data["Categoría"].unique())
-    filtered_data = data[data["Categoría"] == categoria]
-    st.write(f"Mostrando datos para la categoría {categoria}")
+    categoria = st.sidebar.selectbox("Selecciona un departamento", data["Departamento"].unique())
+    filtered_data = data[data["Departamento"] == departamento]
+    st.write(f"Mostrando datos para Departamentos {departamento}")
     st.dataframe(filtered_data)
 
   # 6. Filtrar por Ventas
