@@ -6,6 +6,8 @@ import scipy as sc
 import seaborn as sns
 import plotly.express as px
 from datetime import datetime
+from vega_datasets import data
+
 #1.
 st.set_page_config(
   page_title="Dashboard Interactivo agroindustria",
@@ -72,19 +74,10 @@ if menu == "Visualización":
     # 9. Implementar Pestañas
     st.subheader("📌 Navegación entre Pestañas")
     tab1, tab2 = st.tabs(["📊 Gráficos", "📂 Datos"])
-    with tab1:
-        st.subheader("Visualización de Datos")
-        fig_plotly = px.scatter(
-            filtered_data,
-            x="Departamento",
-            y="Ventas",
-            color="Tipo_produccion",
-            title="Relación entre Ventas y Descuento por Departamento",
-        )
-        st.plotly_chart(fig_plotly)
-    with tab2:
-        st.subheader("Datos Crudos")
-        st.dataframe(filtered_data)
+  
+  source = data.barley()
+
+st.bar_chart(source, x="Departamentor", y="Ventas", color="Tipo_produccion", stack=False)
 
 # 10. Mensaje de Confirmación
 st.sidebar.success("🎉 Configuración completa")
