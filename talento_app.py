@@ -32,4 +32,9 @@ menu = st.sidebar.radio(
     ["Inicio", "Datos", "Visualización", "Configuración"]
 )
 
+# 4. Mostrar los Datos
+if menu == "Datos":
+    st.subheader("📂 Datos Generados")
+    st.dataframe(data)
+
   
