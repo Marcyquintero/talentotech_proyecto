@@ -131,7 +131,7 @@ elif menu == "Configuración":
 elif menu == "Percentil 75":
     st.subheader("📊 Mapa con los valores más altos de All Sky Surface Shortwave Downward Irradiance")
     df_promedio = df_all.groupby(['LAT', 'LON'])['CLRSKY_SFC_SW_DWN'].mean().reset_index()
-    percentil_75 = df_all['ALLSKY_KT'].quantile(0.75)
+    percentil_75 = df_all['CLRSKY_SFC_SW_DWN'].quantile(0.75)
     df_puntos_altos = df_promedio[df_promedio['CLRSKY_SFC_SW_DWN'] > percentil_75]
     df_puntos_bajos = df_promedio[df_promedio['CLRSKY_SFC_SW_DWN'] <= percentil_75]
     mapa = folium.Map(location=[df_promedio['LAT'].mean(), df_promedio['LON'].mean()], zoom_start=6)
