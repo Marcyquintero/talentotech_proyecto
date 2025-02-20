@@ -181,8 +181,8 @@ elif menu == "Percentil 50":
         ).add_to(mapa)
 
     for _, row in df_puntos_bajos.iterrows():
-        # Asignar tamaño proporcional al valor de ALLSKY_KT
-        radius = 4 + (row['CLRSKY_SFC_SW_DWN'] / df_promedio['CLRSKY_SFC_SW_DWN'].max()) * 10  # Escala de tamaño
+        # Asignar tamaño proporcional al valor de ALLSKY_SFC_SW_DWN
+        radius = 4 + (row['ALLSKY_SFC_SW_DWN'] / df_promedio['ALLSKY_SFC_SW_DWN'].max()) * 10  # Escala de tamaño
 
         folium.CircleMarker(
             location=[row['LAT'], row['LON']],
