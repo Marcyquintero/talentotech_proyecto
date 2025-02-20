@@ -191,7 +191,7 @@ elif menu == "Percentil 50":
             fill=True,
             fill_color="blue",
             fill_opacity=0.6,
-            popup=f"Lat: {row['LAT']} - Lon: {row['LON']}<br>Promedio CLRSKY_SFC_SW_DWN: {row['CLRSKY_SFC_SW_DWN']:.2f}",
+            popup=f"Lat: {row['LAT']} - Lon: {row['LON']}<br>Promedio ALLSKY_SFC_SW_DWN: {row['ALLSKY_SFC_SW_DWN']:.2f}",
         ).add_to(mapa)
 
     st.subheader("🌍 Mapa de Puntos Mayores y Menores al Percentil 50")
