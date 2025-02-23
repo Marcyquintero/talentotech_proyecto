@@ -167,7 +167,6 @@ st.pyplot(plt)  # Usa st.pyplot() para mostrar el gráfico en Streamlit
 # Si el usuario selecciona "Configuración", muestra la configuración
 elif menu == "Configuración":
     st.sidebar.success("🎉 Configuración completa")
-    
 elif menu == "Percentiles":
     st.subheader("📊 Mapa con los valores más altos de All Sky Surface Shortwave Downward Irradiance")
     
