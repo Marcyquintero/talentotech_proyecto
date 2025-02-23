@@ -19,7 +19,7 @@ st.sidebar.title("🔍 Opciones de Navegación")
 # Cargar el archivo CSV desde el proyecto
 @st.cache_data
 def cargar_datos():
-    df = pd.read_csv("datos_unificados_all.csv")
+    df = pd.read_csv("datos_unificados (2).csv")
     return df
 
 # Cargar los datos
@@ -144,8 +144,8 @@ elif menu == "Análisis Detallado":
 # Si el usuario selecciona "Matriz de Correlación", muestra la matriz de correlación
 elif menu == "Matriz de Correlación":
     st.subheader("📊 Matriz de Correlación de Variables Climáticas")
-
-    df = df_all.rename(columns={
+    df_corr = pd.read_csv("datos_unificados_all.csv")
+    df = df_corr.rename(columns={
     "RH2M": "Humedad relativa",
     "T2M": "Temperatura",
     "ALLSKY_SFC_SW_DWN": "Indice de claridad",
