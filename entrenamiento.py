@@ -75,9 +75,9 @@ if menu == "Datos":
 elif menu == "Visualización":
      st.subheader("📊 Visualización de Datos Climáticos")
 
-    # Filtro por año
-    año = st.sidebar.selectbox("Selecciona el año", df_all["YEAR"].unique())
-    df_filtrado = df_all[df_all["YEAR"] == año]
+     # Filtro por año
+     año = st.sidebar.selectbox("Selecciona el año", df_all["YEAR"].unique())
+     df_filtrado = df_all[df_all["YEAR"] == año]
 
     st.write(f"Mostrando datos para el año: {año}")
     
