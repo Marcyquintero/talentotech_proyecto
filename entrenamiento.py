@@ -145,24 +145,24 @@ elif menu == "Análisis Detallado":
 elif menu == "Matriz de Correlación":
     st.subheader("📊 Matriz de Correlación de Variables Climáticas")
 
-df = df_all.rename(columns={
+    df = df_all.rename(columns={
     "RH2M": "Humedad relativa",
     "T2M": "Temperatura",
     "ALLSKY_SFC_SW_DWN": "Indice de claridad",
     "ALLSKY_KT": "Irradiancia solar",
     "PRECTOTCORR": "Precipitacion"
-})
+    })
 
-columnas_deseadas = ["Irradiancia solar", "Indice de claridad", "Temperatura", "Humedad relativa", "Precipitacion"]
-df_seleccionado = df[columnas_deseadas]
+    columnas_deseadas = ["Irradiancia solar", "Indice de claridad", "Temperatura", "Humedad relativa", "Precipitacion"]
+    df_seleccionado = df[columnas_deseadas]
 
-matriz_correlacion = df_seleccionado.corr()
+    matriz_correlacion = df_seleccionado.corr()
 
-plt.figure(figsize=(10, 8))
-sns.heatmap(matriz_correlacion, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
-plt.title('Matriz de Correlación')
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(matriz_correlacion, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
+    plt.title('Matriz de Correlación')
 
-st.pyplot(plt)  # Usa st.pyplot() para mostrar el gráfico en Streamlit
+    st.pyplot(plt)  # Usa st.pyplot() para mostrar el gráfico en Streamlit
 
 # Si el usuario selecciona "Configuración", muestra la configuración
 elif menu == "Configuración":
