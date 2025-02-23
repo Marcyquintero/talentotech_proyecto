@@ -39,6 +39,9 @@ def cargar_datos():
     return pd.read_csv("datos_unificados (2).csv")
 df_all = cargar_datos()
 
+# Crear una nueva columna 'Fecha' combinando 'YEAR', 'MO', 'DY'
+df_all['Fecha'] = pd.to_datetime(df_all.astype(str).loc[:, ["YEAR", "MO", "DY"]].agg('-'.join, axis=1))
+
 # Función para crear mapas climáticos
 def crear_mapa_clima(df, columna, titulo):
     max_row = df.loc[df[columna].idxmax()]
