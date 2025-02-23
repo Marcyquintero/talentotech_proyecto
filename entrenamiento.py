@@ -164,7 +164,7 @@ elif menu == "Análisis Detallado":
 
 elif menu == "Matriz de Correlación":
     st.subheader(" Matriz de Correlación de Variables Climáticas")
-    df_corr = pd.read_csv("datos_all.csv") #Se usa el mismo archivo que en el resto del código
+    df_corr = pd.read_csv("datos_unificados_all.csv") #Se usa el mismo archivo que en el resto del código
     df = df_corr.rename(columns={"RH2M": "Humedad relativa", "T2M": "Temperatura", "ALLSKY_SFC_SW_DWN": "Indice de claridad", "ALLSKY_KT": "Irradiancia solar", "PRECTOTCORR": "Precipitacion"})
     columnas_deseadas = ["Irradiancia solar", "Indice de claridad", "Temperatura", "Humedad relativa", "Precipitacion"]
     df_seleccionado = df[columnas_deseadas]
