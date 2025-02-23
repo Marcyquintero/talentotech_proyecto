@@ -73,19 +73,33 @@ if menu == "Datos":
     st.dataframe(df_all)
 
 elif menu == "Visualización":
-    st.subheader("📊 Visualización de Datos Climáticos")
+    st.subheader(" Visualización de Datos Climáticos")
 
     # Filtro por año
     año = st.sidebar.selectbox("Selecciona el año", df_all["YEAR"].unique())
     df_filtrado = df_all[df_all["YEAR"] == año]
 
     st.write(f"Mostrando datos para el año: {año}")
-    
+
+    # Verifica si df_filtrado está vacío
+    if df_filtrado.empty:
+        st.warning(f"No hay datos disponibles para el año {año}.")
+        return
+
+    # Verifica si la columna "Fecha" existe
+    if "Fecha" not in df_filtrado.columns:
+        st.error("La columna 'Fecha' no existe en df_filtrado.")
+        return
+
     # Filtro por rango de fechas
-    fecha_inicio, fecha_fin = st.sidebar.date_input(
-        "Selecciona el rango de fechas:",
-        [df_filtrado["Fecha"].min(), df_filtrado["Fecha"].max()]
-    )
+    try:
+        fecha_inicio, fecha_fin = st.sidebar.date_input(
+            "Selecciona el rango de fechas:",
+            [df_filtrado["Fecha"].min(), df_filtrado["Fecha"].max()]
+        )
+    except KeyError:
+        st.error("Error al acceder a la columna 'Fecha'.")
+        return
 
     # Filtrar los datos según el rango de fechas
     df_filtrado = df_filtrado[(df_filtrado["Fecha"] >= pd.to_datetime(fecha_inicio)) & (df_filtrado["Fecha"] <= pd.to_datetime(fecha_fin))]
@@ -93,16 +107,16 @@ elif menu == "Visualización":
     # Filtro por latitud y longitud
     latitudes_disponibles = df_filtrado["LAT"].unique()
     longitudes_disponibles = df_filtrado["LON"].unique()
-    
+
     lat = st.sidebar.selectbox("Selecciona la latitud", latitudes_disponibles)
     lon = st.sidebar.selectbox("Selecciona la longitud", longitudes_disponibles)
 
     # Filtrar los datos según la latitud y longitud seleccionadas
     df_filtrado_lat_lon = df_filtrado[(df_filtrado["LAT"] == lat) & (df_filtrado["LON"] == lon)]
-    
+
     # Crear un mapa con folium centrado en la latitud y longitud seleccionadas
     mapa = folium.Map(location=[lat, lon], zoom_start=10)
-    
+
     # Añadir un marcador en la ubicación seleccionada
     folium.Marker(
         location=[lat, lon],
@@ -111,9 +125,9 @@ elif menu == "Visualización":
     ).add_to(mapa)
 
     # Mostrar el mapa en Streamlit
-    st.subheader("🌍 Mapa de Ubicación")
+    st.subheader(" Mapa de Ubicación")
     st_folium(mapa, width=700, height=400)
-    
+
     # Crear gráfico interactivo de líneas con Plotly
     fig = px.line(
         df_filtrado_lat_lon,
@@ -141,7 +155,6 @@ elif menu == "Visualización":
 
     # Mostrar el gráfico interactivo
     st.plotly_chart(fig)
-
 elif menu == "Mapa Principal":
     zoom_level = st.sidebar.slider("Nivel de Zoom", 4, 15, 6)
     st.subheader("🌍 Mapa de Calor de Radiación Solar en Colombia")
