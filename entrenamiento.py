@@ -141,7 +141,7 @@ elif menu == "Visualización":
     st.plotly_chart(fig)
 
 elif menu == "Mapa Principal":
-     zoom_level = st.sidebar.slider("Nivel de Zoom", 4, 15, 6)
+    zoom_level = st.sidebar.slider("Nivel de Zoom", 4, 15, 6)
     st.subheader("🌍 Mapa de Calor de Radiación Solar en Colombia")
     fig = px.scatter_mapbox(
         df_all, lat='LAT', lon='LON', color='ALLSKY_KT',
