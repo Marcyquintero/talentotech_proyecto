@@ -14,7 +14,7 @@ st.sidebar.title(" Opciones de Navegación")
 # Funciones de carga de datos
 @st.cache_data
 def cargar_humedad():
-    df = pd.read_csv("datos_agrupados_humedity (2).csv")
+    df = pd.read_csv("datos_completos_humedity (1).csv")
     df = df.rename(columns={"RH2M": "humedad"})  # Renombrar columna
     return df
 
