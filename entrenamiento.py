@@ -20,7 +20,7 @@ def cargar_humedad():
 
 @st.cache_data
 def cargar_precipitacion():
-    df = pd.read_csv("datos_agrupados_precipitation.csv")
+    df = pd.read_csv("datos_agrupados_precipitacion.csv")
     df = df.rename(columns={"PRECTOTCORR": "precipitacion"})  # Renombrar columna
     return df
 
