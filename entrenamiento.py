@@ -58,7 +58,7 @@ def crear_mapa_clima(df, columna, titulo):
     return mapa
 
 # Menú de navegación en la barra lateral
-menu = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Datos", "Visualización", "Mapa Principal", "Análisis Detallado", "Matriz de Correlación", "Percentiles", "Mapas Climáticos", "Configuración"])
+menu = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Datos", "Visualización", "Mapa Principal", "Mapas Climáticos", "Análisis Detallado", "Matriz de Correlación", "Percentiles", "Configuración"])
 
 def get_region(lat, lon):
     if lat > 8: return "Caribe"
