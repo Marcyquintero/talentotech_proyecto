@@ -26,7 +26,7 @@ def cargar_precipitacion():
 
 @st.cache_data
 def cargar_temperatura():
-    df = pd.read_csv("datos_agrupados_temperature.csv")
+    df = pd.read_csv("datos_agrupados_temperature1.csv")
     df = df.rename(columns={"T2M": "temperatura"})  # Renombrar columna
     return df
 
