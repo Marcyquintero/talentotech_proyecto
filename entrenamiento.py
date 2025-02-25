@@ -72,7 +72,7 @@ df_all['Region'] = df_all.apply(lambda x: get_region(x['LAT'], x['LON']), axis=1
 
 if menu == "Datos":
     st.subheader(" Datos Disponibles")
-    st.dataframe(df_all)
+    st.dataframe(df_all.head(100))
 elif menu == "Inicio":
     st.subheader("¡Bienvenidos!")
     st.text("En este dashboard se identifica y visualiza las zonas de mayor potencial para la ubicación de parques solares en Colombia, con el objetivo de impulsar el desarrollo de energía limpia y contribuir a un futuro sostenible.")
