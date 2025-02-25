@@ -246,17 +246,5 @@ elif menu == "Percentiles":
     st.subheader(f"🌍 Mapa de Puntos Mayores y Menores al Percentil {percentil_seleccionado}")
     st_folium(mapa, width=700, height=400)
 
-elif menu == "Mapas Climáticos":
-    st.subheader("️ Mapas de Humedad, Precipitación y Temperatura")
-    tipo_mapa = st.selectbox("Selecciona el tipo de mapa:", ["Humedad", "Precipitación", "Temperatura"])
-    if tipo_mapa == "Humedad":
-        mapa = crear_mapa_clima(df_all, tipo_mapa, "RH2M")
-    elif tipo_mapa == "Precipitación":
-        mapa = crear_mapa_clima(df_all, tipo_mapa, "PRECTOTCORR")
-    elif tipo_mapa == "Temperatura":
-        mapa = crear_mapa_clima(df_all, tipo_mapa, "T2M")
-    if mapa:
-        st_folium(mapa, width=700, height=400)
-
 if __name__ == "__main__":
     st.sidebar.info("Ejecuta este script con: streamlit run solaris_app.py.py")
