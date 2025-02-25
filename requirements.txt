@@ -6,4 +6,4 @@ seaborn
 plotly
 datetime
 streamlit-folium
-Legend
+folium-legend
