@@ -170,19 +170,6 @@ elif menu == "Mapa Principal":
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, height=700)
     st.plotly_chart(fig, use_container_width=True)
 
-elif menu == "Mapa Principal":
-    zoom_level = st.sidebar.slider("Nivel de Zoom", 4, 15, 6)
-    st.subheader("🌍 Mapa de Calor de Radiación Solar en Colombia")
-    fig = px.scatter_mapbox(
-        df_all, lat='LAT', lon='LON', color='ALLSKY_KT',
-        size=[3]*len(df_all), hover_name='LAT', zoom=zoom_level,
-        color_continuous_scale='plasma', mapbox_style='open-street-map',
-        center={'lat': 4.5709, 'lon': -74.2973},
-        opacity=0.15  # Ajustando la opacidad directamente en scatter_mapbox
-    )
-    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, height=700)
-    st.plotly_chart(fig, use_container_width=True)
-
 elif menu == "Análisis Detallado":
     st.subheader("📈 Análisis de Datos Climáticos")
     region_avg = df_all.groupby('Region')['ALLSKY_SFC_SW_DWN'].mean()
