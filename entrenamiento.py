@@ -75,8 +75,11 @@ if menu == "Datos":
     st.subheader(" Datos Disponibles")
     st.dataframe(df_all)
 
+elif menu == "Inicio":
+    
+
 elif menu == "Visualización":
-    st.subheader("📊 Visualización de Datos Climáticos")
+    st.subheader("📊 Proyecto Solaris")
 
     # Filtro por año
     año = st.sidebar.selectbox("Selecciona el año", df_all["YEAR"].unique())
