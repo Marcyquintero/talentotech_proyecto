@@ -74,6 +74,8 @@ df_all['Region'] = df_all.apply(lambda x: get_region(x['LAT'], x['LON']), axis=1
 if menu == "Datos":
     st.subheader(" Datos Disponibles")
     st.dataframe(df_all)
+elif menu == "Inicio":
+    st.text("Este proyecto")
 
 elif menu == "Visualización":
     st.subheader("📊 Visualización datos climáticos")
