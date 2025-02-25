@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from streamlit_folium import st_folium
 
 # Configuración de la página de Streamlit
-st.set_page_config(page_title="Visualización de Datos Climáticos", page_icon="", layout="wide")
-st.title(" Visualización de Datos Climáticos")
+st.set_page_config(page_title="Proyecto Solaris", page_icon="", layout="wide")
+st.title("Proyecto Solaris")
 st.sidebar.title(" Opciones de Navegación")
 
 # Funciones de carga de datos
@@ -76,7 +76,7 @@ if menu == "Datos":
     st.dataframe(df_all)
 
 elif menu == "Visualización":
-    st.subheader("📊 Proyecto Solaris")
+    st.subheader("📊 Visualización datos climáticos")
 
     # Filtro por año
     año = st.sidebar.selectbox("Selecciona el año", df_all["YEAR"].unique())
