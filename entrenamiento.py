@@ -61,7 +61,7 @@ def crear_mapa_clima(df, columna, titulo):
     return mapa
 
 # Menú de navegación en la barra lateral
-menu = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Datos", "Visualización", "Mapa Principal", "Mapas Climáticos", "Análisis Detallado", "Matriz de Correlación", "Percentiles", "Configuración"])
+menu = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Datos", "Visualización", "Mapa Principal", "Mapas Climáticos", "Análisis Detallado", "Matriz de Correlación", "Percentiles"])
 
 def get_region(lat, lon):
     if lat > 8: return "Caribe"
@@ -204,10 +204,6 @@ elif menu == "Mapas Climáticos":
 
     if mapa:
         st_folium(mapa, width=700, height=400)
-
-elif menu == "Configuración":
-    st.sidebar.success(" Configuración completa")
-
 elif menu == "Percentiles":
     st.subheader("📊 Mapa con los valores más altos de All Sky Surface Shortwave Downward Irradiance")
     
