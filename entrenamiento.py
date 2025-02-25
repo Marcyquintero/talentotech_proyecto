@@ -58,8 +58,6 @@ def crear_mapa_clima(df, columna, titulo):
             fill_opacity=0.6,
             popup=f"{titulo}: {valor:.2f}"
         ).add_to(mapa)
-    return mapa
-
 # Menú de navegación en la barra lateral
 menu = st.sidebar.selectbox("Selecciona una opción:", ["Inicio", "Datos", "Visualización", "Mapa Principal", "Mapas Climáticos", "Análisis Detallado", "Matriz de Correlación", "Percentiles"])
 
