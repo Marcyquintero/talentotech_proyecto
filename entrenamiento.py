@@ -76,7 +76,7 @@ if menu == "Datos":
     st.dataframe(df_all)
 elif menu == "Inicio":
     st.subheader("¡Bienvenidos!")
-    st.text("Este dashboard identifica y visualiza las zonas de mayor potencial solar en Colombia, con el objetivo de impulsar el desarrollo de energía limpia y contribuir a un futuro sostenible.")
+    st.text("En este dashboard se identifica y visualiza las zonas de mayor potencial para la ubicación de parques solares en Colombia, con el objetivo de impulsar el desarrollo de energía limpia y contribuir a un futuro sostenible.")
 
 elif menu == "Visualización":
     st.subheader("📊 Visualización datos climáticos")
