@@ -59,16 +59,6 @@ def crear_mapa_clima(df, columna, titulo):
             fill_opacity=0.6,
             popup=f"{titulo}: {valor:.2f}"
         ).add_to(mapa)
-        # Datos de ejemplo para la leyenda
-    legend_dict = {
-        f'> {df[columna].quantile(0.75):.2f}': 'green',
-        f'{df[columna].quantile(0.5):.2f} - {df[columna].quantile(0.75):.2f}': 'orange',
-        f'< {df[columna].quantile(0.5):.2f}': 'red'
-    }
-
-    # Agregar la leyenda al mapa
-    legend = Legend(legend_dict, name=f"Leyenda ({Convenciones})")
-    mapa.add_child(legend)
     return mapa
 
 # Menú de navegación en la barra lateral
