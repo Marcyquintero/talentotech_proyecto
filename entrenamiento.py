@@ -77,14 +77,14 @@ if menu == "Datos":
 elif menu == "Inicio":
     st.subheader("¡Bienvenidos!")
     st.text("En este dashboard se identifica y visualiza las zonas de mayor potencial para la ubicación de parques solares en Colombia, con el objetivo de impulsar el desarrollo de energía limpia y contribuir a un futuro sostenible.
-    El dashboard se divide en las siguientes secciones:
-    - Tabla de datos
-    - Valores por ubicación en el mapa
-    - Mapa de irradiación
-    - Mapas de datos climáticos
-    - Diagrama de barras de zonas geográficas
-    - Matriz de correlación de las variables
-    - Mapa con percentiles de irradiación")
+            El dashboard se divide en las siguientes secciones:
+            - Tabla de datos
+            - Valores por ubicación en el mapa
+            - Mapa de irradiación
+            - Mapas de datos climáticos
+            - Diagrama de barras de zonas geográficas
+            - Matriz de correlación de las variables
+            - Mapa con percentiles de irradiación")
 
 elif menu == "Visualización":
     st.subheader("📊 Visualización datos climáticos")
