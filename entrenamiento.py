@@ -75,9 +75,6 @@ if menu == "Datos":
     st.subheader(" Datos Disponibles")
     st.dataframe(df_all)
 
-elif menu == "Inicio":
-    
-
 elif menu == "Visualización":
     st.subheader("📊 Proyecto Solaris")
 
