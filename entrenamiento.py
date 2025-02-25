@@ -5,7 +5,6 @@ import folium
 import seaborn as sns
 import matplotlib.pyplot as plt
 from streamlit_folium import st_folium
-from folium.plugins import Legend
 
 # Configuración de la página de Streamlit
 st.set_page_config(page_title="Proyecto Solaris", page_icon="", layout="wide")
