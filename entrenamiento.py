@@ -247,4 +247,4 @@ elif menu == "Percentiles":
     st_folium(mapa, width=700, height=400)
 
 if __name__ == "__main__":
-    st.sidebar.info("Ejecuta este script con: streamlit run solaris_app.py")
+    st.sidebar.info("Ejecuta este script con: streamlit run entrenamiento_app.py")
